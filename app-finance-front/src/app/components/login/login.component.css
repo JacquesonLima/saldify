@@ -1,0 +1,76 @@
+.login-container {
+  background: linear-gradient(135deg, #6366f1, rgb(79, 70, 229));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper {
+  display: flex;
+  background: white;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  height: 80vh;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.login-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.login-box h2 {
+  font-size: xx-large;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-box p {
+  color: rgb(73, 73, 73);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.handleLogin {
+  margin-top: 2rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+.submit-button {
+  background: #6366f1;
+  color: white;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.3s ease;
+}
