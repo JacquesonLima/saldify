@@ -1,6 +1,10 @@
 <div class="card-container">
-  <div class="card-box">
-    <h4>Saldo Atual</h4>
-    <div class="card-value">R$ 1.240,00</div>
+  <div *ngFor="let card of cardsData" class="card-content">
+    <div class="card-box">
+      <h4 class="card-title">{{ card.title }}</h4>
+      <p class="card-value" [ngStyle]="{ color: card.color }">
+        {{ card.value }}
+      </p>
+    </div>
   </div>
 </div>

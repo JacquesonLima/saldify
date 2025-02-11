@@ -1,0 +1,12 @@
+<div class="resume-container">
+  <div class="resume-content">
+    <h4 class="resume-title">Resumo de Gastos</h4>
+    <div *ngFor="let expense of expenseData" class="expense">
+      <div class="expense-content">
+        <p><span>Valor:</span> R$ {{ expense.value }}</p>
+        <p><span>Descrição:</span> {{ expense.description }}</p>
+        <p><span>Categoria:</span> {{ expense.category }}</p>
+      </div>
+    </div>
+  </div>
+</div>

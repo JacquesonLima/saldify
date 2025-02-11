@@ -8,6 +8,9 @@
   display: flex;
 }
 
-.content .main {
-  margin: 2rem;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0rem auto 2rem;
 }

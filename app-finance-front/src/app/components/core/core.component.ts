@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
 import { HeaderComponent } from '../header/header.component';
-import { CardComponent } from '../card/card.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-core',
-  imports: [NavComponent, HeaderComponent, CardComponent],
+  imports: [NavComponent, HeaderComponent, RouterOutlet],
   templateUrl: './core.component.html',
   styleUrl: './core.component.css',
 })
