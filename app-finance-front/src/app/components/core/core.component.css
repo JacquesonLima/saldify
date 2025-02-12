@@ -11,6 +11,5 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin: 0rem auto 2rem;
+  
 }

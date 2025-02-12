@@ -1,9 +1,9 @@
 <div class="layout">
-  <header class="header">
+  <header *ngIf="!isLoginPage()" class="header">
     <app-header></app-header>
   </header>
   <div class="content">
-    <nav class="nav">
+    <nav *ngIf="!isLoginPage()" class="nav">
       <app-nav></app-nav>
     </nav>
     <main class="main-container">

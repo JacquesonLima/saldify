@@ -11,6 +11,6 @@ export class LoginComponent {
   public constructor(private router: Router) {}
 
   fazerLogin() {
-    this.router.navigate(['core']);
+    this.router.navigate(['inicio']);
   }
 }

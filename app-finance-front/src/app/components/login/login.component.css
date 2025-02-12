@@ -1,6 +1,14 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
 .login-container {
   background: linear-gradient(135deg, #6366f1, rgb(79, 70, 229));
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
