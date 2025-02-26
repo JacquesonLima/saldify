@@ -1,0 +1,24 @@
+<div class="expenses-container">
+  <div class="expenses-table">
+    <table>
+      <thead class="table-header">
+        <tr>
+          <th>Valor:</th>
+          <th>Data:</th>
+          <th>Categoria:</th>
+          <th>Descrição:</th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        <div *ngFor="let expense of expensesData">
+          <tr>
+            <td>R$ {{ expense.value }}</td>
+            <td>{{ expense.date }}</td>
+            <td>{{ expense.description }}</td>
+            <td class="category-badges">{{ expense.category }}</td>
+          </tr>
+        </div>
+      </tbody>
+    </table>
+  </div>
+</div>

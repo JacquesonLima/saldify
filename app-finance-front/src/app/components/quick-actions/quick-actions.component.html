@@ -2,9 +2,13 @@
   <div class="quick-actions">
     <h4>Ações Rápidas</h4>
     <div class="quick-actions-content">
-      <button><i class="fa-solid fa-plus"></i> Nova Despesa</button>
+      <button (click)="openModal()">
+        <i class="fa-solid fa-plus"></i> Nova Despesa
+      </button>
       <button><i class="fa-solid fa-chart-line"></i> Ver Relatório</button>
       <button><i class="fa-solid fa-wallet"></i> Carteira</button>
     </div>
   </div>
 </div>
+
+<app-expense [isVisible]="isModalVisible" (close)="closeModal()"></app-expense>

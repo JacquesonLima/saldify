@@ -1,4 +1,4 @@
-<div class="layout">
+<div class="layout" *ngIf="isVisible">
   <div class="container">
     <form class="expense-form">
       <h2 class="form-title">Nova Despesa</h2>
@@ -54,7 +54,9 @@
 
       <div class="button-group">
         <button type="submit" class="btn btn-primary">Salvar Despesa</button>
-        <button type="button" class="btn btn-secondary">Cancelar</button>
+        <button (click)="closeModal()" type="button" class="btn btn-secondary">
+          Cancelar
+        </button>
       </div>
     </form>
   </div>
