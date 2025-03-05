@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TitleService } from '../../services/title.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-expenses',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
   templateUrl: './expenses.component.html',
   styleUrl: './expenses.component.css',
 })
-export class ExpensesComponent {
+export class ExpensesComponent implements OnInit {
   expensesData = [
     {
       value: '10,00',
@@ -28,4 +30,11 @@ export class ExpensesComponent {
       category: 'Lazer',
     },
   ];
+
+  constructor(private titleService: TitleService, private title: Title) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Minhas Despesas');
+    this.title.setTitle('Despesas - Saldify');
+  }
 }

@@ -10,12 +10,6 @@
   border-radius: 10px;
 }
 
-.wallet-header {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 400;
-}
-
 .wallet-accounts {
   display: flex;
   flex-direction: column;
