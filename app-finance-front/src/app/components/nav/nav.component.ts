@@ -17,4 +17,8 @@ export class NavComponent {
   abrirDespesas() {
     this.router.navigate(['despesas']);
   }
+
+  abrirCarteira() {
+    this.router.navigate(['carteira']);
+  }
 }

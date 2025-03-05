@@ -1,23 +1,31 @@
 <div class="expenses-container">
-  <div class="expenses-table">
-    <table>
+  <div class="expenses-content">
+    <div class="expense-header">Minhas Despesas</div>
+    <table class="expense-table">
       <thead class="table-header">
         <tr>
           <th>Valor:</th>
           <th>Data:</th>
           <th>Categoria:</th>
           <th>Descrição:</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody class="table-body">
-        <div *ngFor="let expense of expensesData">
-          <tr>
-            <td>R$ {{ expense.value }}</td>
-            <td>{{ expense.date }}</td>
-            <td>{{ expense.description }}</td>
-            <td class="category-badges">{{ expense.category }}</td>
-          </tr>
-        </div>
+        <tr *ngFor="let expense of expensesData">
+          <td>R$ {{ expense.value }}</td>
+          <td>{{ expense.date }}</td>
+          <td>{{ expense.description }}</td>
+          <td>
+            <span class="category-badges">
+              {{ expense.category }}
+            </span>
+          </td>
+          <td class="actions-button">
+            <button>Editar</button>
+            <button>Excluir</button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
