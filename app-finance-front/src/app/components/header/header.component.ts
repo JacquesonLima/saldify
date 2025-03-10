@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TitleService } from '../../services/title.service';
-import { filter } from 'rxjs';
+import { filter, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -22,12 +22,13 @@ export class HeaderComponent implements OnInit {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
-        this.titleService.title$.subscribe((newTitle) => {
-          this.title = newTitle;
-          this.cdr.detectChanges();
-        });
+        this.updateTitle();
       });
 
+    this.updateTitle();
+  }
+
+  private updateTitle(): void {
     this.titleService.title$.subscribe((newTitle) => {
       this.title = newTitle;
       this.cdr.detectChanges();

@@ -1,10 +1,23 @@
 .header-container {
   display: flex;
-  justify-content: center;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 100vw;
   height: 8vh;
+}
+
+.header-title {
+  display: flex;
+  width: 22vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title h1 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .header-box {
@@ -15,19 +28,17 @@
   max-width: 90vw;
 }
 
-.header-box h1 {
-  font-size: 26px;
-  font-weight: 400;
-  cursor: pointer;
+.header-box .header-title-page {
+  justify-self: center;
 }
 
 .header-content {
   display: flex;
   align-items: center;
+  margin-right: 2rem;
 }
 
 .header-content .header-links {
-  display: flex;
   gap: 3rem;
   list-style: none;
   cursor: pointer;

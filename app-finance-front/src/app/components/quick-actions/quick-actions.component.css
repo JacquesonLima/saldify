@@ -33,12 +33,12 @@
   gap: 1rem;
   border: none;
   border-radius: 10px;
-  width: 18rem;
+  width: 19vw;
   cursor: pointer;
-  transition: 1s;
+  transition: background 1s;
 }
 
 .quick-actions-content button:hover {
   background-color: #5455c6;
-  transition: 1s;
+  transition: background 1s;
 }

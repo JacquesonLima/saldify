@@ -1,6 +1,5 @@
 <div class="expenses-container">
   <div class="expenses-content">
-    <div class="expense-header">Minhas Despesas</div>
     <table class="expense-table">
       <thead class="table-header">
         <tr>
@@ -29,7 +28,11 @@
       </tbody>
     </table>
     <div class="button-container">
-      <button><i class="fa-solid fa-plus"></i> Nova Despesa</button>
+      <button (click)="openModal()">
+        <i class="fa-solid fa-plus"></i> Nova Despesa
+      </button>
     </div>
   </div>
 </div>
+
+<app-expense [isVisible]="isModalVisible" (close)="closeModal()"></app-expense>
