@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TitleService } from '../../services/title.service';
-import { filter, switchMap } from 'rxjs';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +11,11 @@ import { filter, switchMap } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   title: string = '';
+  date = new Date().toLocaleDateString('pt-BR', {
+    month: 'long',
+    weekday: 'long',
+    year: 'numeric',
+  });
 
   public constructor(
     private router: Router,
@@ -33,9 +38,5 @@ export class HeaderComponent implements OnInit {
       this.title = newTitle;
       this.cdr.detectChanges();
     });
-  }
-
-  fazerLogout() {
-    this.router.navigate(['login']);
   }
 }

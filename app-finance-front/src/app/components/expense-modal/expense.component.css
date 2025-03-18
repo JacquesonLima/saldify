@@ -67,7 +67,7 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #299d91;
 }
 
 .button-group {
@@ -87,12 +87,13 @@ textarea:focus {
 }
 
 .btn-primary {
-  background-color: #3498db;
+  background-color: #299d91;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #2980b9;
+  background-color: #208178;
+  transition: background 1s;
 }
 
 .btn-secondary {
@@ -102,4 +103,5 @@ textarea:focus {
 
 .btn-secondary:hover {
   background-color: #7f8c8d;
+  transition: background 1s;
 }

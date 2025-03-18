@@ -5,34 +5,89 @@
         <tr>
           <th>Valor:</th>
           <th>Data:</th>
-          <th>Categoria:</th>
           <th>Descrição:</th>
+          <th>Categoria:</th>
           <th>Ações</th>
         </tr>
       </thead>
       <tbody class="table-body">
-        <tr *ngFor="let expense of expensesData">
-          <td>R$ {{ expense.value }}</td>
-          <td>{{ expense.date }}</td>
-          <td>{{ expense.description }}</td>
-          <td>
+        <tr *ngFor="let expense of expensesData; let i = index">
+          <!-- Valor -->
+          <td *ngIf="editIndex !== i">R$ {{ expense.value }},00</td>
+          <td *ngIf="editIndex === i" class="input-edit">
+            <input [(ngModel)]="expense.value" />
+          </td>
+          <!-- Data -->
+          <td *ngIf="editIndex !== i">
+            {{ expense.date | date : "dd/MM/yyyy" }}
+          </td>
+          <td *ngIf="editIndex === i" class="input-edit">
+            <input
+              [(ngModel)]="expense.date"
+              type="date"
+              value="expense.date"
+            />
+          </td>
+          <!-- Descrição -->
+          <td *ngIf="editIndex !== i">{{ expense.description }}</td>
+          <td *ngIf="editIndex === i" class="input-edit">
+            <input type="text" [(ngModel)]="expense.description" />
+          </td>
+          <!-- Categoria -->
+          <td *ngIf="editIndex === i">
+            <select
+              [(ngModel)]="expense.category"
+              name="category"
+              id="category"
+            >
+              <option value="">Selecione uma categoria</option>
+              <option value="Alimentacão">Alimentação</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Moradia">Moradia</option>
+              <option value="Saúde">Saúde</option>
+              <option value="Educação">Educação</option>
+              <option value="Lazer">Lazer</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </td>
+          <td *ngIf="editIndex !== i">
             <span class="category-badges">
               {{ expense.category }}
             </span>
           </td>
+          <!-- Botôes -->
           <td class="actions-button">
-            <button>Editar</button>
-            <button>Excluir</button>
+            <div class="button-table-container">
+              <button *ngIf="editIndex !== i" (click)="editIndex = i">
+                Editar
+              </button>
+              <button *ngIf="editIndex === i" (click)="saveEdit()">
+                Salvar
+              </button>
+              <button (click)="deleteExpense(expense)">Excluir</button>
+            </div>
           </td>
         </tr>
       </tbody>
     </table>
+
     <div class="button-container">
       <button (click)="openModal()">
         <i class="fa-solid fa-plus"></i> Nova Despesa
       </button>
+      <mat-paginator
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"
+      >
+      </mat-paginator>
     </div>
   </div>
 </div>
 
-<app-expense [isVisible]="isModalVisible" (close)="closeModal()"></app-expense>
+<app-expense
+  [isVisible]="isModalVisible"
+  (close)="closeModal()"
+  (addExpense)="onAddExpense($event)"
+></app-expense>

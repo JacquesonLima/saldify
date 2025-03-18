@@ -1,11 +1,12 @@
 <div class="layout">
-  <header *ngIf="!isLoginPage()" class="header">
-    <app-header></app-header>
-  </header>
+  <nav *ngIf="!isLoginPage()" class="nav">
+    <app-nav></app-nav>
+  </nav>
   <div class="content">
-    <nav *ngIf="!isLoginPage()" class="nav">
-      <app-nav></app-nav>
-    </nav>
+    <header *ngIf="!isLoginPage()" class="header">
+      <app-header></app-header>
+    </header>
+
     <main class="main-container">
       <router-outlet />
     </main>

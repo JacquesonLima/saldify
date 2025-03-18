@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
   cardsData = [
-    { title: 'Saldo Atual', value: 'R$ 1.240,00', color: 'green' },
-    { title: 'Despesas do Mês', value: 'R$ 500,00', color: 'red' },
-    { title: 'Receitas do Mês', value: 'R$ 1.740,00', color: 'cornflowerblue' },
+    { title: 'Saldo Atual', value: 'R$ 1.240,00', color: '#0b7f36' },
+    { title: 'Despesas do Mês', value: 'R$ 500,00', color: '#c12806' },
+    { title: 'Receitas do Mês', value: 'R$ 1.740,00', color: '#0f79dd' },
   ];
 }

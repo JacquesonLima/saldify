@@ -1,0 +1,21 @@
+<div class="wallet-modal-container" *ngIf="isVisible">
+  <div class="wallet-modal-content">
+    <div class="wallet-name">
+      <label for="name">Nome da conta</label>
+      <input [(ngModel)]="name" name="name" type="text" placeholder="Banco" />
+    </div>
+    <div class="wallet-amount">
+      <label for="amount">Saldo atual:</label>
+      <input
+        [(ngModel)]="amount"
+        name="amount"
+        type="number"
+        placeholder="R$ 5.000,00"
+      />
+    </div>
+    <div class="wallet-buttons">
+      <button (click)="salvarCarteira()">Salvar</button>
+      <button (click)="fecharModal()">Cancelar</button>
+    </div>
+  </div>
+</div>

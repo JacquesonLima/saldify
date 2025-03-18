@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ExpenseService } from '../../services/expense/expense-service.service';
 
 @Component({
   selector: 'app-resume',
@@ -8,9 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './resume.component.css',
 })
 export class ResumeComponent {
-  expenseData = [
-    { value: '10,00', description: 'Milk Shake', category: 'Alimentação' },
-    { value: '35,00', description: 'Camiseta', category: 'Outros' },
-    { value: '20,00', description: 'Cinema', category: 'Lazer' },
-  ];
+  expensesData: any[] = [];
+
+  constructor(private expenseService: ExpenseService) {}
+
+  ngOnInit(): void {
+    // Inscreva-se para receber os dados atualizados
+    this.expenseService.currentExpenses.subscribe((expenses) => {
+      this.expensesData = expenses.slice(-5);
+    });
+  }
 }

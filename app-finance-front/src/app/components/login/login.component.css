@@ -6,7 +6,7 @@
 }
 
 .login-container {
-  background: linear-gradient(135deg, #6366f1, rgb(79, 70, 229));
+  background: linear-gradient(-135deg, #0c868f, #a5b3aa);
   min-height: 100vh;
   height: 100vh;
   display: flex;
@@ -26,8 +26,13 @@
 }
 
 .login-image {
+  display: flex;
+  width: 500px;
+}
+
+.login-image img {
   background-size: cover;
-  background-position: center;
+  background-position: right;
 }
 
 .login-box {
@@ -68,12 +73,12 @@
 }
 
 .input-field:focus {
-  border-color: #6366f1;
+  border-color: #0ca5b0;
   outline: none;
 }
 
 .submit-button {
-  background: #6366f1;
+  background: #0ca5b0;
   color: white;
   width: 100%;
   margin-top: 2rem;

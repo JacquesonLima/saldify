@@ -1,61 +1,60 @@
-.header-container {
+.header-box {
   display: flex;
   background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100vw;
-  height: 8vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 82vw;
+  height: 6vh;
 }
 
-.header-title {
-  display: flex;
-  width: 22vw;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-title h1 {
-  text-align: center;
-  font-size: 1.75rem;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.header-box {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
-  max-width: 90vw;
+  width: 82vw;
 }
 
-.header-box .header-title-page {
-  justify-self: center;
-}
-
-.header-content {
+.header-container .header-content {
   display: flex;
   align-items: center;
-  margin-right: 2rem;
+  padding: 0 1rem;
+  width: 40vw;
 }
 
-.header-content .header-links {
-  gap: 3rem;
+.header-container .header-content .welcome {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header-container .header-content .info-date {
+  color: #969696;
+}
+
+.header-container .search-content {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.header-container .header-content ul,
+.header-container .search-content ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   list-style: none;
-  cursor: pointer;
 }
 
-.header-links li:hover {
-  transition: 1s ease;
-  color: #6366f1;
+.header-container .search-content ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.header-content button {
-  background-color: #6366f1;
-  color: white;
+.header-container .search-content ul li input {
+  width: 16vw;
+  padding: 0.25rem;
+  border-radius: 6px;
   border: none;
-  margin-left: 1rem;
-  padding: 0.5rem;
-  border-radius: 8px;
+}
+
+i {
   cursor: pointer;
-  transition: background-color 0.3s;
 }
