@@ -103,9 +103,10 @@
 
 .nav-profile .nav-profile-user {
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -120,9 +121,15 @@
   align-items: center;
 }
 
+.nav-profile .nav-profile-user .nav-profile-links h4 {
+  text-align: center;
+  font-size: 16px;
+}
+
 .nav-profile .nav-profile-user .nav-profile-links p {
   display: flex;
   gap: 1rem;
+  font-size: 14px;
   cursor: pointer;
 }
 

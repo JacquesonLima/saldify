@@ -29,50 +29,7 @@ interface Expense {
   styleUrl: './expenses.component.css',
 })
 export class ExpensesComponent implements OnInit {
-  expensesData: any[] = [
-    {
-      value: 250.0,
-      date: 'Sat Mar 15 2025',
-      description: 'Compras do Mercado',
-      category: 'Alimentação',
-      observations: '',
-    },
-    {
-      value: 120.0,
-      date: 'Sat Mar 15 2025',
-      description: 'Roupas',
-      category: 'Outros',
-      observations: 'Promoção',
-    },
-    {
-      value: 35.0,
-      date: 'Sat Mar 15 2025',
-      description: 'Cinema',
-      category: 'Lazer',
-      observations: 'Filme de ação',
-    },
-    {
-      value: 220.0,
-      date: 'Sat Mar 15 2025',
-      description: 'Curso de Inglês',
-      category: 'Educação',
-      observations: '',
-    },
-    {
-      value: 140.0,
-      date: 'Sat Mar 15 2025',
-      description: 'Serviços de Streaming',
-      category: 'Lazer',
-      observations: '',
-    },
-    {
-      value: 65.0,
-      date: 'Sat Mar 15 2025',
-      description: 'Acadêmia',
-      category: 'Saúde',
-      observations: '',
-    },
-  ];
+  filteredExpenses: any[] = [];
 
   editIndex: number | null = null;
   isModalVisible = false;
@@ -87,7 +44,10 @@ export class ExpensesComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle('Minhas Despesas');
     this.title.setTitle('Despesas - Saldify');
-    this.expenseService.updateExpenses(this.expensesData);
+    this.expenseService.updateExpenses(this.expenses);
+    this.expenseService.filteredExpenses$.subscribe((expenses) => {
+      this.filteredExpenses = expenses;
+    });
   }
 
   openModal() {
@@ -99,8 +59,7 @@ export class ExpensesComponent implements OnInit {
   }
 
   onAddExpense(expense: Expense) {
-    expense.date = new Date(expense.date).toDateString();
-    this.expensesData.push(expense);
+    this.expenseService.AddExpense(expense);
     this.isModalVisible = false;
     console.log('Despesa adicionada:', expense);
   }
@@ -109,10 +68,8 @@ export class ExpensesComponent implements OnInit {
     this.editIndex = null;
   }
 
-  deleteExpense(expense: Expense) {
-    const confirm = window.confirm('Deseja realmente excluir esta despesa?');
-    confirm
-      ? (this.expensesData = this.expensesData.filter((e) => e !== expense))
-      : null;
+  onDeleteExpense(expense: Expense) {
+    this.expenseService.deleteExpense(expense);
+    console.log('Despesa excluída:', expense);
   }
 }

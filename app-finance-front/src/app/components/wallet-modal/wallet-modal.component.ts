@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 interface Wallet {
   name: string;
-  amount: number;
+  amount: string;
 }
 
 @Component({
@@ -18,7 +18,7 @@ export class WalletModalComponent {
   @Output() close = new EventEmitter<void>();
   @Output() addWallet = new EventEmitter<Wallet>();
   name: string = '';
-  amount: number = 0;
+  amount: string = '';
 
   fecharModal() {
     this.close.emit();
@@ -30,7 +30,7 @@ export class WalletModalComponent {
       amount: this.amount,
     };
     this.name = '';
-    this.amount = 0;
+    this.amount = '';
     this.addWallet.emit(newWallet);
   }
 }

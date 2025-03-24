@@ -3,15 +3,15 @@
     <table class="expense-table">
       <thead class="table-header">
         <tr>
-          <th>Valor:</th>
-          <th>Data:</th>
-          <th>Descrição:</th>
-          <th>Categoria:</th>
+          <th>Valor</th>
+          <th>Data</th>
+          <th>Descrição</th>
+          <th>Categoria</th>
           <th>Ações</th>
         </tr>
       </thead>
       <tbody class="table-body">
-        <tr *ngFor="let expense of expensesData; let i = index">
+        <tr *ngFor="let expense of filteredExpenses; let i = index">
           <!-- Valor -->
           <td *ngIf="editIndex !== i">R$ {{ expense.value }},00</td>
           <td *ngIf="editIndex === i" class="input-edit">
@@ -64,7 +64,7 @@
               <button *ngIf="editIndex === i" (click)="saveEdit()">
                 Salvar
               </button>
-              <button (click)="deleteExpense(expense)">Excluir</button>
+              <button (click)="onDeleteExpense(expense)">Excluir</button>
             </div>
           </td>
         </tr>
@@ -76,8 +76,8 @@
         <i class="fa-solid fa-plus"></i> Nova Despesa
       </button>
       <mat-paginator
-        [length]="100"
-        [pageSize]="10"
+        [length]="[expenses.length]"
+        [pageSize]="5"
         [pageSizeOptions]="[5, 10, 25, 100]"
         aria-label="Select page"
       >

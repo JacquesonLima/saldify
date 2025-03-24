@@ -2,14 +2,17 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TitleService } from '../../services/title.service';
 import { filter } from 'rxjs';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu';
+import { ExpenseService } from '../../services/expense/expense-service.service';
 
 @Component({
   selector: 'app-header',
-  imports: [],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  imports: [MatBadgeModule, MatMenuModule],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
-export class HeaderComponent implements OnInit {
+export class NavComponent implements OnInit {
   title: string = '';
   date = new Date().toLocaleDateString('pt-BR', {
     month: 'long',
@@ -20,7 +23,8 @@ export class HeaderComponent implements OnInit {
   public constructor(
     private router: Router,
     private titleService: TitleService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private expenseService: ExpenseService
   ) {}
 
   ngOnInit(): void {
@@ -38,5 +42,10 @@ export class HeaderComponent implements OnInit {
       this.title = newTitle;
       this.cdr.detectChanges();
     });
+  }
+
+  onSearch(event: Event) {
+    const searchTerm = (event.target as HTMLInputElement).value;
+    this.expenseService.filterExpenses(searchTerm);
   }
 }

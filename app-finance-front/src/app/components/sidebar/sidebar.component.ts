@@ -1,18 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-nav',
-  imports: [CommonModule],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css',
+  imports: [CommonModule, MatSnackBarModule],
+  templateUrl: './sidebar.component.html',
+  styleUrl: './sidebar.component.css',
 })
-export class NavComponent {
+export class SideComponent {
   public constructor(private router: Router) {}
 
   activeItem: string = '';
-  name: string = 'Jacqueson';
+  name: string = 'Jacqueson Lima';
 
   setActive(item: string) {
     this.activeItem = item;

@@ -1,0 +1,33 @@
+<div class="header-box">
+  <div class="header-container">
+    <div class="header-content">
+      <ul>
+        <li class="welcome">{{ title }}</li>
+        <li><i class="fa-solid fa-angles-right"></i></li>
+        <li class="info-date">{{ date }}</li>
+      </ul>
+    </div>
+    <div class="search-content">
+      <ul>
+        <div class="input-search">
+          <input
+            type="text"
+            placeholder="Search Here"
+            (input)="onSearch($event)"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <li matBadge="5">
+          <i class="fa-solid fa-bell" mat-button [matMenuTriggerFor]="menu"></i>
+          <mat-menu #menu="matMenu">
+            <p mat-menu-item>Notificação 1</p>
+            <p mat-menu-item>Notificação 2</p>
+            <p mat-menu-item>Notificação 3</p>
+            <p mat-menu-item>Notificação 4</p>
+            <p mat-menu-item>Notificação 5</p>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

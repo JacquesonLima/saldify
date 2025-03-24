@@ -25,21 +25,21 @@
   overflow: hidden;
 }
 
-.login-image {
-  display: flex;
-  width: 500px;
+.login-wrapper .login-image {
+  margin: auto 0;
 }
 
-.login-image img {
+.login-wrapper .login-image img {
+  width: 500px;
   background-size: cover;
-  background-position: right;
+  background-position: center;
 }
 
 .login-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgb(255, 255, 255);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   width: 100%;

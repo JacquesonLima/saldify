@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 interface Wallet {
   name: string;
-  amount: number;
+  amount: string;
 }
 
 @Component({
@@ -19,11 +19,11 @@ export class WalletComponent implements OnInit {
   walletsData: any[] = [
     {
       name: 'Conta Principal',
-      amount: 1.24,
+      amount: '1.240,00',
     },
     {
       name: 'Conta Poupança',
-      amount: 10.8,
+      amount: '10.800,00',
     },
   ];
 

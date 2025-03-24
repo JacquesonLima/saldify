@@ -7,7 +7,7 @@ import { WalletComponent } from './components/wallet/wallet.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/inicio',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
   {
