@@ -17,14 +17,16 @@
           />
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <li matBadge="5">
+        <li matBadge="{{ notificationsCount() }}" matBadgeColor="warn">
           <i class="fa-solid fa-bell" mat-button [matMenuTriggerFor]="menu"></i>
-          <mat-menu #menu="matMenu">
-            <p mat-menu-item>Notificação 1</p>
-            <p mat-menu-item>Notificação 2</p>
-            <p mat-menu-item>Notificação 3</p>
-            <p mat-menu-item>Notificação 4</p>
-            <p mat-menu-item>Notificação 5</p>
+          <mat-menu #menu="matMenu" class="notification-menu">
+            <p
+              mat-menu-item
+              *ngFor="let notification of notifications"
+              (click)="readNotification(notification.id)"
+            >
+              {{ notification.message }}
+            </p>
           </mat-menu>
         </li>
       </ul>

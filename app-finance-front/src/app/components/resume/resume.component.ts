@@ -14,9 +14,8 @@ export class ResumeComponent implements OnInit {
   constructor(private expenseService: ExpenseService) {}
 
   ngOnInit(): void {
-    this.expenseService.currentExpenses.subscribe((expenses) => {
+    this.expenseService.filteredExpenses$.subscribe((expenses) => {
       this.expensesData = expenses.slice(-5);
     });
-    console.log('resume');
   }
 }
