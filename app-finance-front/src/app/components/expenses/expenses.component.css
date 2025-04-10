@@ -82,6 +82,10 @@
   margin: 0 1.5rem 1rem;
 }
 
+.button-container .paginator {
+  background-color: #fff;
+}
+
 button {
   background-color: #299d91;
   color: #fff;

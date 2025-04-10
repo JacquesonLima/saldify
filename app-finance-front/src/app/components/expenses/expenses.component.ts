@@ -66,6 +66,7 @@ export class ExpensesComponent implements OnInit {
 
   saveEdit() {
     this.editIndex = null;
+    this.expenseService.updateExpenses(this.expenses);
   }
 
   onDeleteExpense(expense: Expense) {

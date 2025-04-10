@@ -76,7 +76,6 @@
 
 .input-search input:focus,
 .input-search input:hover {
-  outline: none;
   border-color: #0c868f;
   background-color: #fff;
   width: 15vw;

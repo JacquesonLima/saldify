@@ -1,0 +1,64 @@
+<div class="profile-container">
+  <div class="profile-options">
+    <h3
+      (click)="openAccount()"
+      [ngClass]="{ active: activeItem === 'account' }"
+    >
+      Account
+    </h3>
+    <h3
+      (click)="openSecurity()"
+      [ngClass]="{ active: activeItem === 'security' }"
+    >
+      Security
+    </h3>
+  </div>
+  <div class="profile-content-container">
+    <div class="profile-content" [hidden]="!isAccountActive">
+      <div class="profile-content-info">
+        <div class="input-field">
+          <h4>Full name</h4>
+          <input type="text" placeholder="Jhon Doe" />
+        </div>
+        <div class="input-field">
+          <h4>Email</h4>
+          <input type="email" placeholder="jhondoe@gmail.com" />
+        </div>
+        <div class="input-field">
+          <h4>Username</h4>
+          <input type="text" placeholder="jhondoe" />
+        </div>
+        <div class="input-field">
+          <h4>Phone Number</h4>
+          <input type="tel" placeholder="(+55) 11 91234-5678" />
+        </div>
+        <button>Update Profile</button>
+      </div>
+      <div class="profile-content-image">
+        <h4>Your Profile Picture</h4>
+        <img src="/img/upload-img.png" alt="" width="140px" />
+      </div>
+    </div>
+    <div class="profile-security" [hidden]="!isSecurityActive">
+      <div class="profile-security-info">
+        <div class="input-field">
+          <h4>Current Password</h4>
+          <input type="password" placeholder="********" />
+        </div>
+        <div class="input-field">
+          <h4>New Password</h4>
+          <input type="password" placeholder="********" />
+        </div>
+        <div class="input-field">
+          <h4>Retype Password</h4>
+          <input type="password" placeholder="********" />
+        </div>
+        <div class="input-field">
+          <h4>Phone Number</h4>
+          <input type="tel" placeholder="(+55) 11 91234-5678" />
+        </div>
+        <button>Update Password</button>
+      </div>
+    </div>
+  </div>
+</div>

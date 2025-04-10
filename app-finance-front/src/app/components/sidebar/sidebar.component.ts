@@ -34,6 +34,11 @@ export class SideComponent {
     this.router.navigate(['carteira']);
   }
 
+  abrirPerfil() {
+    this.setActive('profile');
+    this.router.navigate(['profile']);
+  }
+
   fazerLogout() {
     const confirm = window.confirm('Deseja realmente sair?');
     confirm ? this.router.navigate(['login']) : null;
